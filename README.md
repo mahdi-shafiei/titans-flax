@@ -1,9 +1,13 @@
 # Titans: Learning to Memorize at Test Time
 
+[![CI](https://github.com/mahdi-shafiei/titans-flax/actions/workflows/ci.yml/badge.svg)](https://github.com/mahdi-shafiei/titans-flax/actions/workflows/ci.yml)
+[![Documentation](https://readthedocs.org/projects/titans-flax/badge/?version=latest)](https://titans-flax.readthedocs.io/)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![JAX](https://img.shields.io/badge/JAX-compatible-green.svg)](https://jax.readthedocs.io/)
 [![Flax NNX](https://img.shields.io/badge/Flax-NNX-orange.svg)](https://flax.readthedocs.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Checked with pyright](https://microsoft.github.io/pyright/img/pyright_badge.svg)](https://microsoft.github.io/pyright/)
 
 A complete implementation of the **Titans** architecture from the paper *"Titans: Learning to Memorize at Test Time"* using the Flax NNX framework. This implementation provides neural long-term memory that learns and adapts during inference, enabling models to handle extremely long sequences and perform test-time adaptation.
 
