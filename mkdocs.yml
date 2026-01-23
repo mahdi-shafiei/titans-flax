@@ -1,0 +1,130 @@
+site_name: Titans - Learning to Memorize at Test Time
+site_description: A complete implementation of the Titans architecture using Flax NNX
+site_author: Titans Implementation Team
+site_url: https://titans-flax.readthedocs.io/
+
+repo_name: mahdi-shafiei/titans-flax
+repo_url: https://github.com/mahdi-shafiei/titans-flax
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+            show_root_full_path: false
+            show_object_full_path: false
+            show_category_heading: true
+            docstring_style: google
+            docstring_options:
+              ignore_init_summary: true
+            merge_init_into_class: true
+            show_signature_annotations: true
+            signature_crossrefs: true
+  - autorefs
+  # - mike:
+  #     version_selector: true
+  #     css_dir: css
+  #     javascript_dir: js
+  # - awesome-pages
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+  - Tutorials:
+    - tutorials/index.md
+    - Understanding Titans: tutorials/understanding-titans.md
+  - Examples:
+    - examples/index.md
+    - Language Modeling: examples/language-modeling.md
+  - API Reference:
+    - api/index.md
+    - Core Components:
+      - Main Module: api/core.md
+      - Memory Module: api/neural-memory.md
+      - Attention Modules: api/attention-modules.md
+      - Architecture Variants: api/variants.md
+    - Configuration: api/config.md
+    - Training: api/training.md
+    - Utilities:
+      - Optimization: api/optimization-utilities.md
+      - Benchmarking: api/benchmark.md
+      - Serialization: api/serialization.md
+
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mahdi-shafiei/titans-flax
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/titans-flax/

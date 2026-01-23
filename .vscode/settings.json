@@ -1,0 +1,40 @@
+{
+    "python.pythonPath": "./venv/bin/python",
+    "python.defaultInterpreterPath": "./venv/bin/python",
+    "editor.rulers": [88],
+    "editor.wordWrapColumn": 88,
+    "python.formatting.provider": "none",
+    "ruff.lineLength": 88,
+    "ruff.lint.enable": true,
+    "ruff.format.enable": true,
+    "python.linting.enabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.prospectorEnabled": false,
+    "python.linting.pydocstyleEnabled": false,
+    "python.linting.pylamaEnabled": false,
+    "flake8.enabled": false,
+    "flake8.args": [],
+    "black-formatter.enabled": false,
+    "isort.enabled": false,
+    "pylsp.plugins.flake8.enabled": false,
+    "pylsp.plugins.pycodestyle.enabled": false,
+    "pylsp.plugins.pyflakes.enabled": false,
+    "pylsp.plugins.mccabe.enabled": false,
+    "pyright.disableLanguageServices": false,
+    "pyright.disableOrganizeImports": false,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        },
+        "editor.formatOnSave": true,
+        "editor.rulers": [88],
+        "editor.wordWrapColumn": 88
+    },
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "makefile.configureOnOpen": false
+}

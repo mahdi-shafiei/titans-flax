@@ -1,0 +1,53 @@
+# Core dependencies
+
+# Titans: Learning to Memorize at Test Time
+# Core dependencies for the Flax NNX implementation
+#
+# For a complete installation with all features, use:
+# pip install -e ".[all]"
+
+# Core JAX ecosystem
+jax>=0.4.20
+jaxlib>=0.4.20
+flax>=0.8.0
+optax>=0.1.7
+
+# Array and scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Checkpointing and serialization
+orbax-checkpoint>=0.4.0
+
+# Configuration and data handling
+pydantic>=2.0.0
+pyyaml>=6.0
+
+# Utilities
+tqdm>=4.65.0
+rich>=13.0.0
+
+# Plotting and visualization (optional but recommended)
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Development dependencies (install with pip install -e ".[dev]")
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+# black>=23.0.0
+# isort>=5.12.0
+# mypy>=1.5.0
+# pre-commit>=3.3.0
+
+# Research dependencies (install with pip install -e ".[research]")
+# wandb>=0.15.0
+# tensorboard>=2.14.0
+# jupyter>=1.0.0
+# ipykernel>=6.25.0
+# notebook>=7.0.0
+
+# GPU support (install with pip install -e ".[gpu]")
+# jax[cuda12_pip]>=0.4.20
+
+# TPU support (install with pip install -e ".[tpu]")
+# jax[tpu]>=0.4.20

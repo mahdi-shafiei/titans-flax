@@ -1,0 +1,123 @@
+# Pre-commit configuration for titans-flax
+# Install: pre-commit install
+# Run manually: pre-commit run --all-files
+# Update: pre-commit autoupdate
+
+repos:
+  # Ruff - Fast Python linter and formatter (replaces flake8, isort, black, etc.)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.11
+    hooks:
+      # Run the linter
+      - id: ruff
+        name: ruff-lint
+        description: "Run Ruff linter"
+        args: [--fix]
+        types_or: [python, pyi]
+      # Run the formatter
+      - id: ruff-format
+        name: ruff-format
+        description: "Run Ruff formatter"
+        types_or: [python, pyi]
+
+  # Pyright - Microsoft's static type checker for Python
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.401
+    hooks:
+      - id: pyright
+        name: pyright
+        description: "Run pyright type checker"
+        additional_dependencies: [
+          jax==0.8.2,
+          jaxlib==0.8.2,
+          flax==0.12.2,
+          optax==0.2.5,
+          numpy>=1.24.0,
+          scipy>=1.10.0,
+          orbax-checkpoint>=0.4.0,
+          pydantic>=2.0.0,
+          pyyaml>=6.0,
+          tqdm>=4.65.0,
+          rich>=13.0.0,
+          wandb>=0.19.0,
+          pytest>=7.0.0,
+          matplotlib>=3.6.0,
+          tiktoken>=0.5.0,
+          seaborn>=0.12.0,
+        ]
+
+  # Built-in pre-commit hooks for common issues
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        name: trailing-whitespace
+        description: "Remove trailing whitespace"
+      - id: end-of-file-fixer
+        name: end-of-file-fixer
+        description: "Ensure files end with a newline"
+      - id: check-merge-conflict
+        name: check-merge-conflict
+        description: "Check for merge conflict markers"
+      - id: check-yaml
+        name: check-yaml
+        description: "Check YAML file syntax"
+        exclude: ^\.github/workflows/.*\.ya?ml$
+      - id: check-toml
+        name: check-toml
+        description: "Check TOML file syntax"
+      - id: check-json
+        name: check-json
+        description: "Check JSON file syntax"
+      - id: check-added-large-files
+        name: check-added-large-files
+        description: "Check for large files"
+        args: [--maxkb=1000]
+      - id: check-case-conflict
+        name: check-case-conflict
+        description: "Check for case conflicts"
+      - id: check-docstring-first
+        name: check-docstring-first
+        description: "Check docstring is first in Python files"
+      - id: debug-statements
+        name: debug-statements
+        description: "Check for debugger imports and breakpoints"
+
+  # Security checks
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.8.3
+    hooks:
+      - id: bandit
+        name: bandit
+        description: "Run bandit security linter"
+        args: ['-c', 'pyproject.toml']
+        additional_dependencies: ["bandit[toml]"]
+        exclude: ^tests/
+
+  # Check for secrets
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        name: detect-secrets
+        description: "Detect secrets in code"
+        args: ['--baseline', '.secrets.baseline']
+        exclude: |
+          (?x)^(
+              \.secrets\.baseline|
+              .*\.lock|
+              package-lock\.json
+          )$
+
+# Configure specific settings
+ci:
+  autofix_commit_msg: |
+    [pre-commit.ci] auto fixes from pre-commit hooks
+
+    for more information, see https://pre-commit.ci
+  autofix_prs: true
+  autoupdate_branch: ''
+  autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
+  autoupdate_schedule: weekly
+  skip: []
+  submodules: false

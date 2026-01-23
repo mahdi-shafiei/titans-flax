@@ -1,0 +1,125 @@
+/* Custom CSS for Titans Documentation */
+
+/* Code block enhancements */
+.highlight pre {
+    background-color: var(--md-code-bg-color);
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+/* Improved table styling */
+.md-typeset table:not([class]) {
+    border: 1px solid var(--md-default-fg-color--lighter);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+    background-color: var(--md-default-fg-color--lightest);
+    font-weight: 600;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+    border-color: var(--md-default-fg-color--lighter);
+    padding: 0.75rem;
+}
+
+/* Enhanced admonitions */
+.md-typeset .admonition {
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* API reference styling */
+.doc-contents h2 {
+    border-bottom: 2px solid var(--md-primary-fg-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+.doc-contents h3 {
+    color: var(--md-primary-fg-color);
+    margin-top: 1.5rem;
+}
+
+/* Math notation improvements */
+.MathJax {
+    color: var(--md-default-fg-color);
+}
+
+/* Button styling for code copy */
+.md-clipboard {
+    transition: opacity 0.25s;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 76.1875em) {
+    .md-typeset pre {
+        margin: 1em -0.8rem;
+    }
+}
+
+/* Dark mode specific adjustments */
+[data-md-color-scheme="slate"] {
+    --md-code-bg-color: #2d3748;
+}
+
+[data-md-color-scheme="slate"] .highlight pre {
+    background-color: #1a202c;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+    background-color: #2d3748;
+}
+
+/* Navigation improvements */
+.md-nav__item .md-nav__link--active {
+    font-weight: 600;
+}
+
+/* Search result highlighting */
+.md-search-result__meta {
+    color: var(--md-default-fg-color--light);
+}
+
+/* Version banner styling */
+.md-banner {
+    background: linear-gradient(45deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+}
+
+/* Custom classes for special content */
+.titans-architecture-table {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.titans-architecture-table th,
+.titans-architecture-table td {
+    text-align: left;
+    vertical-align: top;
+}
+
+.titans-math-notation {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+/* Code example styling */
+.code-example {
+    background-color: var(--md-code-bg-color);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--md-primary-fg-color);
+}
+
+/* Performance tips styling */
+.performance-tip {
+    background-color: var(--md-accent-fg-color--transparent);
+    border-radius: 4px;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    border-left: 3px solid var(--md-accent-fg-color);
+}
