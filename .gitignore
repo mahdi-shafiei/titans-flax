@@ -437,3 +437,9 @@ Thumbs.db
 
 
 audit/**
+
+# Agent context and internal notes — never published
+CLAUDE.md
+AGENTS.md
+.claude/
+memory-bank/
