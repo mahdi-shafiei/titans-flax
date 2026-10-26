@@ -442,4 +442,5 @@ audit/**
 CLAUDE.md
 AGENTS.md
 .claude/
+.cursor/
 memory-bank/
